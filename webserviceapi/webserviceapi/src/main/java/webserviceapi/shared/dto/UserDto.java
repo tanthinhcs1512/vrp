@@ -11,7 +11,6 @@ public class UserDto implements Serializable {
     private String email;
     private String encryptedPassword;
     private String password;
-    private GroupDto groupEntity;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -71,13 +70,5 @@ public class UserDto implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public GroupDto getGroupEntity() {
-        return groupEntity;
-    }
-
-    public void setGroupEntity(GroupDto groupEntity) {
-        this.groupEntity = groupEntity;
     }
 }
