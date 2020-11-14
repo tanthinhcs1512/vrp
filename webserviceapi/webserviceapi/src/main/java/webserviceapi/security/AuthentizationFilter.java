@@ -8,8 +8,8 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import webserviceapi.AppRouteConstant;
 import webserviceapi.entity.RoleEntity;
 import webserviceapi.entity.UserEntity;
-import webserviceapi.respository.RoleRepository;
-import webserviceapi.respository.UserRepository;
+import webserviceapi.repository.RoleRepository;
+import webserviceapi.repository.UserRepository;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

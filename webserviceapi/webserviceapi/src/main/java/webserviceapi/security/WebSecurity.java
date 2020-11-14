@@ -13,8 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import webserviceapi.respository.RoleRepository;
-import webserviceapi.respository.UserRepository;
+import webserviceapi.repository.RoleRepository;
+import webserviceapi.repository.UserRepository;
 
 import java.util.Arrays;
 

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import webserviceapi.AppRouteConstant;
 import webserviceapi.entity.RoleEntity;
 import webserviceapi.entity.UserEntity;
-import webserviceapi.respository.RoleRepository;
-import webserviceapi.respository.UserRepository;
+import webserviceapi.repository.RoleRepository;
+import webserviceapi.repository.UserRepository;
 import webserviceapi.service.UserService;
 
 import java.security.Principal;

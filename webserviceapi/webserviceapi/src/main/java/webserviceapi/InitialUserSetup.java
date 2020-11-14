@@ -7,8 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import webserviceapi.entity.RoleEntity;
 import webserviceapi.entity.UserEntity;
-import webserviceapi.respository.RoleRepository;
-import webserviceapi.respository.UserRepository;
+import webserviceapi.repository.RoleRepository;
+import webserviceapi.repository.UserRepository;
 import webserviceapi.shared.Ultils;
 
 import java.util.Arrays;

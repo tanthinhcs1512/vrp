@@ -14,7 +14,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "coordinate")
-public class CoordinateEntity  implements Serializable {
+public class CoordinateEntity implements Serializable {
 
     private static final long serialVersionUID = 345678L;
 

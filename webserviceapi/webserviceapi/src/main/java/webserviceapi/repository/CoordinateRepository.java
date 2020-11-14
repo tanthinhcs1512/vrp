@@ -1,11 +1,8 @@
-package webserviceapi.respository;
+package webserviceapi.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import webserviceapi.entity.CoordinateEntity;
-import webserviceapi.entity.RoleEntity;
-
-import java.util.List;
 
 
 @Repository
