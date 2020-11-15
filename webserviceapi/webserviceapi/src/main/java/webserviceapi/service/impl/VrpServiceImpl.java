@@ -13,8 +13,9 @@ import webserviceapi.entity.RouteEntity;
 import webserviceapi.repository.CoordinateRepository;
 import webserviceapi.repository.IntersectionRepository;
 import webserviceapi.repository.RouteRepository;
-import webserviceapi.repository.StatisticLatitudeLongitude;
+import webserviceapi.repository.jdbc.IntersectionCoordinateRepository;
 import webserviceapi.service.VrpService;
+import webserviceapi.shared.dto.IntersectionCoordinateDto;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -33,6 +34,9 @@ public class VrpServiceImpl implements VrpService {
 
     @Autowired
     IntersectionRepository intersectionRepository;
+
+    @Autowired
+    IntersectionCoordinateRepository intersectionCoordinateRepository;
 
     @Override
     public void insertDataCoordinate() {
@@ -90,7 +94,7 @@ public class VrpServiceImpl implements VrpService {
 
     @Override
     public void insertIntersectionCoordinates() {
-        List<StatisticLatitudeLongitude> intersectionEntities = coordinateRepository.intersectionCoordinates();
+        List<IntersectionCoordinateDto> intersectionEntities = intersectionCoordinateRepository.getIntersectionCoordinates();
         if (intersectionEntities.size() > 0 && intersectionEntities != null) {
             for (int i = 0; i < 10; i++) {
                 int randomInteger = (int)(intersectionEntities.size() * Math.random());;

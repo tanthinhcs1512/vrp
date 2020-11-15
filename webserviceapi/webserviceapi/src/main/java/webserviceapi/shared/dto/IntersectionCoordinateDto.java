@@ -1,17 +1,12 @@
-package webserviceapi.repository;
+package webserviceapi.shared.dto;
 
-public class StatisticLatitudeLongitude {
+public class IntersectionCoordinateDto {
+
     private Integer count;
 
     private Double latitude;
 
     private Double longitude;
-
-    public StatisticLatitudeLongitude(Integer count, Double latitude, Double longitude) {
-        this.count = count;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
 
     public Integer getCount() {
         return count;
