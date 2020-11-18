@@ -2,6 +2,7 @@ package webserviceapi.service.impl;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import webserviceapi.repository.RouteRepository;
 import webserviceapi.repository.jdbc.IntersectionCoordinateRepository;
 import webserviceapi.service.VrpService;
 import webserviceapi.shared.dto.IntersectionCoordinateDto;
+import webserviceapi.shared.dto.Node;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -535,4 +537,18 @@ public class VrpServiceImpl implements VrpService {
         return rs;
     }
 
+    @Override
+    public List<Node> getAllNode() {
+        List<Node> returnValue = new ArrayList<>();
+        Iterable<NodeEntity> nodes = nodeRepository.findAll();
+        List<NodeEntity> lst = StreamSupport
+                .stream(nodes.spliterator(), false)
+                .collect(Collectors.toList());
+        for (int i = 0; i < lst.size(); i++) {
+            Node node = new Node();
+            BeanUtils.copyProperties(lst.get(i), node);
+            returnValue.add(node);
+        }
+        return returnValue;
+    }
 }

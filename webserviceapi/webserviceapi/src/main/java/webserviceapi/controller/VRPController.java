@@ -4,9 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import webserviceapi.model.response.NodeCoordResponseModel;
 import webserviceapi.service.VrpService;
+import webserviceapi.shared.dto.Node;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/vrp")
@@ -47,6 +50,14 @@ public class VRPController {
     public String node(){
         vrpService.insertNode();
         return "node";
+    }
+
+    @GetMapping("/node")
+    public NodeCoordResponseModel getNode() {
+        NodeCoordResponseModel returnValue = new NodeCoordResponseModel();
+        List<Node> rs = vrpService.getAllNode();
+        returnValue.setLst(rs);
+        return returnValue;
     }
 
 }
