@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/mapbox-gl/dist/mapbox-gl.css",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fe-gui"
+    }
+  },
+  "defaultProject": "fe-gui",
+  "cli": {
+    "analytics": "7caee20a-441e-4833-b46e-e693786646b8"
+  }
 }

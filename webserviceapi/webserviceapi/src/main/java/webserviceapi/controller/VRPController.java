@@ -37,27 +37,16 @@ public class VRPController {
         return "route";
     }
 
+    @GetMapping("/data/createMainRoute/9449f814-ed66-4fa0-9c55-4e414545a667")
+    public String createMainRoute() {
+        vrpService.createMainRoute();
+        return "main route";
+    }
 
-//    public double CalculationByDistance() {
-//        int Radius = 6371;// radius of earth in Km
-//        double lat1 = 50.924327;
-//        double lat2 = 50.924967;
-//        double lon1 = 2.865072;
-//        double lon2 = 2.8652;
-//        double dLat = Math.toRadians(lat2 - lat1);
-//        double dLon = Math.toRadians(lon2 - lon1);
-//        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
-//                + Math.cos(Math.toRadians(lat1))
-//                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
-//                * Math.sin(dLon / 2);
-//        double c = 2 * Math.asin(Math.sqrt(a));
-//        double valueResult = Radius * c;
-//        double km = valueResult / 1;
-//        DecimalFormat newFormat = new DecimalFormat("####");
-//        int kmInDec = Integer.valueOf(newFormat.format(km));
-//        double meter = valueResult % 1000;
-//        int meterInDec = Integer.valueOf(newFormat.format(meter));
-//
-//        return Radius * c;
-//    }
+    @GetMapping("/data/node/9449f814-ed66-4fa0-9c55-4e414545a667")
+    public String node(){
+        vrpService.insertNode();
+        return "node";
+    }
+
 }

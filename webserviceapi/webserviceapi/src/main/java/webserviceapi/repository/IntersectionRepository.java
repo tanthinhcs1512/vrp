@@ -11,11 +11,6 @@ import java.util.List;
 @Repository
 public interface IntersectionRepository extends CrudRepository<IntersectionEntity, Long> {
 
-    @Query(value = "Select * \n" +
-            "from ( \n" +
-            "Select id = 1, latitude, longitude, count(*) as count\n" +
-            "from coordinate\n" +
-            "group by latitude, longitude) as  u\n" +
-            "order by u.count desc;", nativeQuery = true)
+    @Query(value = "Select * from intersection", nativeQuery = true)
     List<IntersectionEntity> intersectionCoordinates();
 }

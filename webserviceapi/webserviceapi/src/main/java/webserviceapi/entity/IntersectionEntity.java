@@ -15,13 +15,15 @@ public class IntersectionEntity implements Serializable {
 
     private static final long serialVersionUID = 345678L;
 
-    public IntersectionEntity(Double latitude, Double longitude, Integer count) {
+    public IntersectionEntity(Double latitude, Double longitude, Integer count, String name) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.count = count;
+        this.name = name;
     }
 
-
+    public IntersectionEntity() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +34,9 @@ public class IntersectionEntity implements Serializable {
 
     @Column(nullable = false)
     private Double longitude;
+
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false)
     private Integer count;
@@ -66,5 +71,13 @@ public class IntersectionEntity implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
